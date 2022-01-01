@@ -1,3 +1,3 @@
- git clone https://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@github.com/JohnsonLinnn/JavaScript_Sheet_API
+ git push https://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@github.com/JohnsonLinnn/JavaScript_Sheet_API
 
- git push https://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@github.com/JohnsonLinnn/JavaScript_Sheet_API
+ git push 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@github.com/JohnsonLinnn/JavaScript_Sheet_API
