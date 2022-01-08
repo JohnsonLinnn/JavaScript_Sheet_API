@@ -46,7 +46,7 @@
     }
 
     function initClient() {
-      var API_KEY = 'AIzaSyBFPMVRLd_D3K7LpJbVjGVMWJVmA_05_x4';  // TODO: Update placeholder with desired API key.
+      var API_KEY = 'AIzaSyDpz6EmHPsxrzcs_H4Q8RI4YjHyYzvyxNA';  // TODO: Update placeholder with desired API key.
 
       var CLIENT_ID = '713500500772-agahgcffh7fe392jvqlgv1id45jn3jbt.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
 
@@ -95,7 +95,8 @@
     <!---->
  
     <form>
-
+      <label for="date">日期</label>
+      <input type="date" name="date" id="date" /><br>
       <label for="name">店家</label>
       <input type="text" name="name" id="name" /><br>
       <label for="item">品項</label>
@@ -128,6 +129,8 @@
                 const data = new FormData(event.target);
                 const value = Object.fromEntries(data.entries());
                 var formdatas=[]
+                
+                formdatas.push(value['date'])
                 formdatas.push(value['name'])
                 formdatas.push(value['item'])
                 formdatas.push(value['price'])

@@ -1,5 +1,6 @@
 <html>
   <head>
+    <link rel="stylesheet" href="mystyle.css">
     <meta charset="utf-8">
   </head>
   <body>
@@ -93,17 +94,27 @@
     <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
     <button id="signout-button" onclick="handleSignOutClick()">Sign out</button><br>
     <!---->
- 
     <form>
+      <div class="row">
+        <div class="col-25">
+          <label for="name"> 店家</label>
+        </div>
+        <div class="col-75">
+          <input type="text" name="name" id="name" /><br>
+        </div>
+      </div>
 
-      <label for="name">店家</label>
-      <input type="text" name="name" id="name" /><br>
+      
       <label for="item">品項</label>
       <input type="text" name="item" id="item" /><br>
+      
       <label for="price">金額</label>
-      <input type="number" name="price" id="price" /><br>
+      <input type="number" name="price" id="price"/><br>
+      
       <label for="amount">數量</label>
       <input type="number" name="amount" id="amount" /><br>
+      
+
 
       <label for="catalog">分類</label>
       <select name="catalog">
@@ -122,16 +133,21 @@
       
       <button type="submit">Submit</button>
     </form>
+
          <script type="text/javascript">
             function handleSubmit(event) {
                 event.preventDefault();
                 const data = new FormData(event.target);
                 const value = Object.fromEntries(data.entries());
+                const d = new Date();
                 var formdatas=[]
+                formdatas.push(d.getDate())
+                formdatas.push(d.getDay())
                 formdatas.push(value['name'])
                 formdatas.push(value['item'])
                 formdatas.push(value['price'])
                 formdatas.push(value['amount'])
+                formdatas.push(value['amount']*value['price'])
                 formdatas.push(value['catalog'])
                 formdatas.push(value['payment'])
                 makeApiCall(formdatas)
